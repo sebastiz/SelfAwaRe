@@ -6,10 +6,10 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## A methodology for the routine improvement of endoscopic practise
+## A methodology for the routine improvement of endoscopic practice
 
 Endoscopy is carried out around the world thousands of times a day. It is extremely important that the performance of endoscopy is always excellent and that this excellence is standardised across all endoscopists. Although there are methods to measure performance of individual endoscopists, these often lack mechanisms to provide in-depth areas of improvement. Furthermore the lack of ability in most centres to associate endoscopic images with the results of biopsies means that lesion recognition improvement is outside of the normal workflow for most endoscopists.
 
