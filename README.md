@@ -9,22 +9,9 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## A methodology for the routine improvement of endoscopic practise
 
-This is an R Markdown document about making endoscopists more self aware about their performance as well as to improve lesion recognition. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Endoscopy is carried out around the world thousands of times a day. It is extremely important that the performance of endoscopy is always excellent and that this excellence is standardised across all endoscopists. Although there are methods to measure performance of individual endoscopists, these often lack mechanisms to provide in-depth areas of improvement. Furthermore the lack of ability in most centres to associate endoscopic images with the results of biopsies means that lesion recognition improvement is outside of the normal workflow for most endoscopists.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+This package provides a methodology for the routine collection of performance data for individual endoscopists as well as methods for the association of endoscopy images from common endoscopy software types, with the pathology reports from tissue taken at individual endoscopies. It also demonstrates methods to further build tools using the pathology-endoscopy image outputs, for example, building endoscopy images atlases
 
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
