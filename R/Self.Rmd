@@ -1,0 +1,134 @@
+---
+title: "Endoscopic-Histopathology reports St Thomas' Hospital"
+author: "Authored by Sebastian Zeki"
+date: "Created: `r format(Sys.time(),'%d %B, %Y')`"
+output:
+  word_document:
+    fig_caption: true
+---
+
+This is a report demonstrating the pathology related to endoscopies `r gsub("df","",this_is_a_name)` has performed   
+
+
+
+```{r, echo=FALSE,fig.width=8,fig.height=8,echo=FALSE,fig.cap="Your casemix for the month"}
+
+
+counts_df$Var1<-str_wrap(counts_df$Var1,55)
+ggplot(counts_df,aes(x=Var2,y=value,fill=Var1))+
+  aes(stringr::str_wrap(Var2,25),value)+
+  geom_bar(stat="identity")+
+  #theme(legend.position="bottom")+
+  #theme(legend.direction="horizontal")+
+  labs(x="Date",title="Number of procedures performed in the month",y="Number procedures")+
+  theme(axis.text.x=element_text(angle=-90,hjust=1)) +
+  scale_fill_discrete(name="Procedure Type")
+
+
+```
+
+
+   -------------------------------------------------------------    
+   ------------------------------------------------------------- 
+   ------------------------------------------------------------- 
+   
+   
+```{r, echo=FALSE}
+#pander(FinalTable2,justify='left',caption="Table 4: Your monthly GRS")
+```
+ 
+ 
+   -------------------------------------------------------------    
+   ------------------------------------------------------------- 
+   ------------------------------------------------------------- 
+   
+ <!---  
+`r if(!is.null(BDR)){paste("Your basic gastroscopy diagnostic rate is:", round(BDR,2),"%. This is a measure of how many of your  diagnostic gastroscopies where biopsies were taken, resulted in a positive diagnosis of either Barrett's, coeliac disease,candida,  eosinophilic oesophagitis or peptic disease on the pathology report. This is as a proportion of your pathology reports ")}`
+   -->
+   
+   -------------------------------------------------------------    
+   ------------------------------------------------------------- 
+   -------------------------------------------------------------
+   
+   
+    
+```{r, fig.width=8,fig.height=8,echo=FALSE,fig.cap="Average number of biopsies you have taken by indication (black bar) compared to unit average for month (red dot)"}
+
+ggplot(IndicVsBx3)+
+  aes(stringr::str_wrap(Reason,15),mean)+
+  geom_bar(aes(x=Reason,y=mean),stat="identity")+
+  geom_point(aes(x=Reason,y=Result),size=6, colour="#CC0000")+
+  labs(x="Date",title="Reason for, and number of biopsies",y="Average number of biopsies")+
+  theme(axis.text.x=element_text(angle=-90,hjust=0,size=18))  
+
+```
+
+
+   -------------------------------------------------------------    
+   ------------------------------------------------------------- 
+   -------------------------------------------------------------
+   
+   
+   
+   
+
+```{r, width=8,fig.height=8,echo=FALSE,fig.cap= "Histopathological diagnoses you made by diagnostic endoscopic procedures only where you took a tissue sample (red dot unit average, black bar, the proportion of endoscopies where the biopsies show this diagnosis"}
+# try(do.call(grid.arrange,c(z,ncol=1,nrow=4)))
+ ```
+
+
+
+
+   ------------------------------------------------------------- 
+   ------------------------------------------------------------- 
+   -------------------------------------------------------------
+
+
+
+
+   
+```{r, width=8,fig.height=8,echo=FALSE,fig.cap="Absolute number of diagnoses (from histopathology report-y-axis) per indication (x-axis)"}
+##    try(pheatmap(myzzzMatrix,cluster_rows=F,fontsize=8,legend=F,cellwidth=8))
+ ```
+
+
+
+   ------------------------------------------------------------- 
+   -------------------------------------------------------------
+   ------------------------------------------------------------- 
+   
+   
+   
+```{r, echo=FALSE}
+pander(Cancertbl,justify='left',split.table=Inf,caption="Table 1: Cancer diagnoses")
+
+```
+
+
+
+   ------------------------------------------------------------- 
+   ------------------------------------------------------------- 
+   ------------------------------------------------------------- 
+
+```{r, echo=FALSE}
+pander(Dysplasiatbl,justify='left',split.table=Inf,caption="Table 2: Dysplasia diagnoses")
+```
+   
+   
+   
+   ----------------------------------------------------------- 
+   ----------------------------------------------------------- 
+   -----------------------------------------------------------
+
+```{r, echo=FALSE}
+
+pander(Alltbl,justify='left',split.table=Inf,caption="Table 4: All diagnoses. Note if the pathology box is empty or just says Diagnosis then the result is normal- presented like this for ease of reading")
+```
+
+
+  ----------------------------------------------------------- 
+   ----------------------------------------------------------- 
+   -----------------------------------------------------------
+   
+
+

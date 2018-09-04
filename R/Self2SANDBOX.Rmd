@@ -1,0 +1,18 @@
+---
+title: "Endoscopic-Histopathology reports St Thomas' Hospital"
+author: "Endoscopy Dept"
+date: "`r format(Sys.time(),'%d %B, %Y')`"
+output:
+  word_document:
+    fig_caption: true
+---
+
+This is a report demonstrating the pathology related to endoscopies has performed   
+
+
+
+```{r, echo=FALSE}
+
+pander(Self,justify='left',split.table=Inf,caption="Table 4: All diagnoses. Note if the pathology box is empty or just says Diagnosis then the result is normal- presented like this for ease of reading")
+```
+

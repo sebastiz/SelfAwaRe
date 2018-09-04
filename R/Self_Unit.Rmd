@@ -1,0 +1,88 @@
+---
+title: "Monthly unit wide Endo-Histopathology Report"
+author: "Endoscopy Dept"
+date: "`r format(Sys.time(),'%d %B, %Y')`"
+output: word_document
+---
+
+This is a monthly report summarising the endoscopy unit's activity:
+
+Overall activity
+
+```{r, fig.width=8,fig.height=8,echo=FALSE}
+
+ggplot(ccByPerson,aes(x=Reason,y=ToTalNumBx))+
+  geom_bar(stat="identity")+
+  theme(axis.text.x=element_text(angle=-90))+
+  labs(x="Date",title="Number of Biopsies taken by indication",y="Number of biopsies","Indication for biopsies")
+  
+```
+
+
+
+```{r, fig.width=10,fig.height=12,echo=FALSE,fig.cap='Biopsies by endoscopist according to indication'}
+pheatmap(matPoss,cluster_rows=F,fontsize=8,legend=F,cellwidth=8)
+
+```
+
+
+
+By endoscopist
+```{r, fig.width=8,fig.height=8,echo=FALSE}
+pheatmap(myEndoMatrix,cluster_rows=F,fontsize=8,legend=F,cellwidth=8)
+```
+
+
+```{r, fig.width=8,fig.height=8,echo=FALSE}
+# ggplot(ProcedurePlot,aes(x=ProcPerformed,y=freq))+
+#   geom_bar(stat="identity")+
+#   geom_text(aes(label=freq),position=position_dodge(width=0.9),vjust=-0.35)+
+#   theme(axis.text.x=element_text(angle=-90))+
+#   labs(x="Procedure",title="Number of Procedures ",y="Number of Procedures")+
+#    theme(legend.position="bottom")+
+#   theme(legend.direction="horizontal")
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r, fig.width=8,fig.height=8,echo=FALSE}
+# ggplot(data=ProcedurePlot2,aes(x=ProcPerformed,freq,fill=Endo_Endoscopist))+
+#   geom_bar(stat="identity")+
+#   #coord_polar(theta="y")+
+#   theme(legend.position="none")+
+#   theme(axis.text.x=element_text(angle=-90))+
+#    theme(legend.position="bottom")+
+#   theme(legend.direction="horizontal")
+```
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r, fig.width=8,fig.height=8,echo=FALSE}
+# ggplot(data=Gastroscopy,aes(x=ProcPerformed,freq,fill=Endo_Endoscopist))+
+#   geom_bar(stat="identity")+
+#    theme(legend.position="bottom")+
+#   theme(legend.direction="horizontal")+
+#   theme(axis.text.x=element_text(angle=-90))
+```
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r, fig.width=8,fig.height=8,echo=FALSE}
+# ggplot(data=GastroscoptTherap,aes(x=ProcPerformed,freq,fill=Endo_Endoscopist))+
+#   geom_bar(stat="identity")+
+#    theme(legend.position="bottom")+
+#   theme(legend.direction="horizontal")+
+#   theme(axis.text.x=element_text(angle=-90))
+```
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r, fig.width=8,fig.height=8,echo=FALSE}
+# ggplot(data=ERCP,aes(x=ProcPerformed,freq,fill=Endo_Endoscopist))+
+#   geom_bar(stat="identity")+
+#    theme(legend.position="bottom")+
+#   theme(legend.direction="horizontal")+
+#   theme(axis.text.x=element_text(angle=-90))
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r, fig.width=8,fig.height=8,echo=FALSE}
+# ggplot(data=LowerOscopy,aes(x=ProcPerformed,freq,fill=Endo_Endoscopist))+
+#   geom_bar(stat="identity")+
+#    theme(legend.position="bottom")+
+#   theme(legend.direction="horizontal")+
+#   theme(axis.text.x=element_text(angle=-90))
+```
