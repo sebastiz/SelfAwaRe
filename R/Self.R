@@ -390,8 +390,6 @@ ReportOP<-function(x,Dxlst,mydf){
 
   IndicVsBx2<-IndicVsBx2[!is.na(IndicVsBx2$mean),]
   #merge with the relevant fromt eh unit averages from
-  #View(IndicVsBx2)
-
   IndicVsBx2<-IndicVsBx2[!grepl("\n$",IndicVsBx2$Reason),]
   IndicVsBx2$Reason<-gsub("\n ","",IndicVsBx2$Reason)
   IndicVsBx2$Reason<-gsub("\n","",IndicVsBx2$Reason)
