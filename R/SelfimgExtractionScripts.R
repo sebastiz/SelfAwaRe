@@ -8,9 +8,6 @@ df<-as.data.frame(df)
 colnames(df)<-c("df")
 
 
-
-
-library(stringr)
 df$Endo_Endoscopist<-str_extract(df$df,"Endoscopist.*?<")
 df$Endo_Endoscopist<-gsub("Endoscopist: ","",df$Endo_Endoscopist)
 df$Endo_Endoscopist<-gsub("<","",df$Endo_Endoscopist)
